@@ -24,36 +24,36 @@ class GoodBurger {
         createOrder(scanner, "French Fries");
         createOrder(scanner, "Drinks");
 
-        // Read order
+
         readOrder();
 
         // Update order
         updateOrder(scanner, "Good Burger");
 
-        // Read order again to see the update
+
         readOrder();
 
-        // Delete order
+
         deleteOrder("Good Burger");
 
-        // Read order again to see the deletion
+
         readOrder();
 
-        // Calculate total
+
         double total = calculateTotal();
         System.out.println("Total = $" + String.format("%.2f", total));
 
         scanner.close();
     }
 
-    // Create operation
+
     public static void createOrder(Scanner scanner, String item) {
         System.out.print(item + " ($" + menu.get(item) + "): ");
         int quantity = scanner.nextInt();
         order.put(item, quantity);
     }
 
-    // Read operation
+
     public static void readOrder() {
         System.out.println("Current Order:");
         for (Map.Entry<String, Integer> entry : order.entrySet()) {
@@ -64,7 +64,7 @@ class GoodBurger {
         }
     }
 
-    // Update operation
+
     public static void updateOrder(Scanner scanner, String item) {
         if (order.containsKey(item)) {
             System.out.print("Update " + item + " quantity: ");
@@ -76,7 +76,7 @@ class GoodBurger {
         }
     }
 
-    // Delete operation
+
     public static void deleteOrder(String item) {
         if (order.containsKey(item)) {
             order.remove(item);
@@ -86,7 +86,7 @@ class GoodBurger {
         }
     }
 
-    // Calculate total
+
     public static double calculateTotal() {
         double total = 0.0;
         for (Map.Entry<String, Integer> entry : order.entrySet()) {
